@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bskhiem623rkr"]
+
+[ext_resource type="Script" path="res://jukebox/Jukebox.gd" id="1_as854"]
+
+[node name="Jukebox" type="Node"]
+script = ExtResource("1_as854")
+
+[node name="AudioStream" type="AudioStreamPlayer" parent="."]
+
+[node name="NextSongTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="finished" from="AudioStream" to="." method="_on_audio_stream_finished"]
+[connection signal="timeout" from="NextSongTimer" to="." method="_on_next_song_timer_timeout"]
