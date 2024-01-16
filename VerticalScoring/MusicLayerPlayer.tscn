@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2flc7pm6grv3"]
+
+[ext_resource type="Script" path="res://VerticalScoring/MusicLayerPlayer.gd" id="1_wxtqk"]
+
+[node name="MusicLayerPlayer" type="Node"]
+script = ExtResource("1_wxtqk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

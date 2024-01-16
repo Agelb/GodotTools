@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmqfysgnbss0j"]
+
+[ext_resource type="Script" path="res://VerticalScoring/VerticalScore.gd" id="1_fsoef"]
+
+[node name="VerticalScore" type="Node"]
+script = ExtResource("1_fsoef")
+layers = null
+autoplay = null
