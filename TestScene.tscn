@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://235y6u5srbn7"]
+
+[ext_resource type="Script" path="res://TestScene.gd" id="1_np7bj"]
+[ext_resource type="PackedScene" uid="uid://bskhiem623rkr" path="res://jukebox/jukebox.tscn" id="1_pw0go"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_np7bj")
+
+[node name="Jukebox" parent="." instance=ExtResource("1_pw0go")]
+autoload = true
+playlist_directory = "res://audio"
+autoplay = false
+
+[connection signal="load_complete" from="Jukebox" to="." method="_on_jukebox_load_complete"]
+[connection signal="song_finished" from="Jukebox" to="." method="_on_jukebox_song_finished"]
+[connection signal="song_started" from="Jukebox" to="." method="_on_jukebox_song_started"]

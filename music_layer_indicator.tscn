@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvq8w241p7vhp"]
+
+[ext_resource type="Script" path="res://MusicLayerIndicator.gd" id="1_sncag"]
+
+[sub_resource type="Gradient" id="Gradient_jnce4"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8saow"]
+gradient = SubResource("Gradient_jnce4")
+
+[sub_resource type="Gradient" id="Gradient_j2ri5"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ikmop"]
+gradient = SubResource("Gradient_j2ri5")
+
+[node name="MusicLayerIndicator" type="Node2D"]
+script = ExtResource("1_sncag")
+
+[node name="Border" type="Sprite2D" parent="."]
+scale = Vector2(1.25197, 1.25197)
+texture = SubResource("GradientTexture2D_8saow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_ikmop")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -52.0
+offset_top = 40.0
+offset_right = 55.0
+offset_bottom = 80.0

@@ -4,5 +4,3 @@
 
 [node name="VerticalScore" type="Node"]
 script = ExtResource("1_fsoef")
-layers = null
-autoplay = null

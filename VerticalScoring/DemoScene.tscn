@@ -1,12 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://jwtqe608ur1w"]
+[gd_scene load_steps=6 format=3 uid="uid://jwtqe608ur1w"]
 
 [ext_resource type="Script" path="res://VerticalScoring/DemoVerticalScene.gd" id="1_ykw84"]
 [ext_resource type="PackedScene" uid="uid://cmqfysgnbss0j" path="res://VerticalScoring/VerticalScore.tscn" id="2_hwaue"]
 [ext_resource type="Resource" uid="uid://lgg2m6p1r0l1" path="res://VerticalScoring/SampleLayers/BaseLayer.tres" id="3_0v0wc"]
 [ext_resource type="Resource" uid="uid://ccqmug6enqlkr" path="res://VerticalScoring/SampleLayers/Intensity1.tres" id="4_e6lkm"]
+[ext_resource type="Resource" uid="uid://5hilhqlw6pq0" path="res://VerticalScoring/SampleLayers/Intensity2.tres" id="5_myavy"]
 
 [node name="DemoScene" type="Node"]
 script = ExtResource("1_ykw84")
 
 [node name="VerticalScore" parent="." instance=ExtResource("2_hwaue")]
-layers = [ExtResource("3_0v0wc"), ExtResource("4_e6lkm")]
+layers = Array[Resource("res://VerticalScoring/MusicLayer.gd")]([ExtResource("3_0v0wc"), ExtResource("4_e6lkm"), ExtResource("5_myavy")])
+
+[connection signal="layer_started" from="VerticalScore" to="." method="_on_vertical_score_layer_started"]
+[connection signal="layer_stopped" from="VerticalScore" to="." method="_on_vertical_score_layer_stopped"]
+[connection signal="paused" from="VerticalScore" to="." method="_on_vertical_score_paused"]
+[connection signal="started" from="VerticalScore" to="." method="_on_vertical_score_started"]
+[connection signal="stopped" from="VerticalScore" to="." method="_on_vertical_score_stopped"]
+[connection signal="unpaused" from="VerticalScore" to="." method="_on_vertical_score_unpaused"]
