@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MusicLayer" load_steps=3 format=3 uid="uid://lgg2m6p1r0l1"]
+
+[ext_resource type="AudioStream" uid="uid://chl6ddrsvwvq2" path="res://audio/06 Lullaby.wav" id="1_33w25"]
+[ext_resource type="Script" path="res://VerticalScoring/MusicLayer.gd" id="1_dfrxd"]
+
+[resource]
+script = ExtResource("1_dfrxd")
+target_volume = 0.0
+autoplay = true
+output_bus_name = "Master"
+audio_stream = ExtResource("1_33w25")
+fade_in_time = 0.5
+fade_out_time = 0.5
